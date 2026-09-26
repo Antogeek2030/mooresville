@@ -1,0 +1,96 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import {
+	SITE_TITLE,
+	BUSINESS_PHONE,
+	BUSINESS_PHONE_TEL,
+} from '../../consts';
+
+const title = `Heating & Furnace Repair Mooresville NC | Fast No-Heat Service`;
+const description =
+	"Reliable heating and furnace repair in Mooresville NC. Same-day service for no heat, strange smells, and furnace failures. Call (704) 799-0123.";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<nav class="breadcrumb">
+				<a href="/">Home</a> → <a href="/services">Services</a> → Heating Repair
+			</nav>
+			<h1>Heating & Furnace Repair in Mooresville, NC</h1>
+			<p class="lead">
+				A cold house is more than uncomfortable — it can be unsafe. We provide fast heating
+				and furnace repair for Mooresville homes so you stay warm when temperatures drop.
+			</p>
+
+			<section>
+				<h2>Heating Problems We Solve</h2>
+				<ul>
+					<li>No heat or insufficient heat</li>
+					<li>Furnace will not start or keeps shutting off</li>
+					<li>Strange smells (burning, gas, or musty)</li>
+					<li>Pilot light or ignition issues</li>
+					<li>Uneven heating from room to room</li>
+					<li>Unusual noises from the furnace</li>
+					<li>Thermostat problems</li>
+					<li>Rising energy bills during heating season</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Systems We Service</h2>
+				<p>
+					Gas furnaces, electric furnaces, boilers, dual-fuel systems, and heat pumps.
+					We work on all major brands and provide honest recommendations — repair when
+					it makes sense, replace only when needed.
+				</p>
+			</section>
+
+			<section>
+				<h2>Same-Day & Emergency Heating Repair</h2>
+				<p>
+					We prioritize no-heat calls, especially during cold snaps. Call early in the
+					day for the best chance of same-day service. After-hours emergency options
+					are available when needed.
+				</p>
+			</section>
+
+			<section class="cta-box">
+				<h2>Need Heating Repair?</h2>
+				<p>Call now — we serve Mooresville and Lake Norman communities.</p>
+				<div class="cta-buttons">
+					<a href={`tel:${BUSINESS_PHONE_TEL}`} class="btn btn-call">Call {BUSINESS_PHONE}</a>
+					<a href="/contact#quote" class="btn btn-quote">Get a Quote</a>
+				</div>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	main { max-width: 800px; margin: 0 auto; padding: 2em 1em; }
+	.breadcrumb { font-size: 0.9em; margin-bottom: 1.5em; color: #555; }
+	.breadcrumb a { color: #0d47a1; text-decoration: none; }
+	.breadcrumb a:hover { text-decoration: underline; }
+	h1 { color: #0d47a1; margin-bottom: 0.4em; }
+	.lead { font-size: 1.1em; margin-bottom: 1.75em; }
+	section { margin-bottom: 2em; }
+	h2 { color: #1565c0; font-size: 1.3em; margin: 0 0 0.5em; }
+	ul { padding-left: 1.4em; line-height: 1.7; }
+	.cta-box { text-align: center; background: #f5f9ff; padding: 2em 1em; border-radius: 8px; }
+	.cta-box h2 { color: #0d47a1; }
+	.cta-buttons { display: flex; flex-wrap: wrap; gap: 0.75em; justify-content: center; margin-top: 1em; }
+	.btn { display: inline-block; padding: 0.7em 1.4em; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 1.05em; }
+	.btn-call { background: #ff6f00; color: #fff; }
+	.btn-call:hover { background: #e65100; color: #fff; }
+	.btn-quote { background: #0d47a1; color: #fff; }
+	.btn-quote:hover { background: #1565c0; color: #fff; }
+</style>

@@ -1,0 +1,95 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import {
+	SITE_TITLE,
+	BUSINESS_PHONE,
+	BUSINESS_PHONE_TEL,
+} from '../../consts';
+
+const title = `Heat Pump Repair Mooresville NC | Service & Maintenance`;
+const description =
+	"Expert heat pump repair and service in Mooresville NC. Year-round comfort for Lake Norman homes. Call (704) 799-0123.";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<nav class="breadcrumb">
+				<a href="/">Home</a> → <a href="/services">Services</a> → Heat Pump Repair
+			</nav>
+			<h1>Heat Pump Repair in Mooresville, NC</h1>
+			<p class="lead">
+				Heat pumps are ideal for the moderate Lake Norman climate. When yours stops
+				heating or cooling efficiently, we provide expert diagnosis and repair.
+			</p>
+
+			<section>
+				<h2>Common Heat Pump Issues</h2>
+				<ul>
+					<li>System not switching between heat and cool modes</li>
+					<li>Ice buildup on the outdoor unit</li>
+					<li>Weak airflow or uneven temperatures</li>
+					<li>Unusual noises or vibrations</li>
+					<li>Short cycling or continuous running</li>
+					<li>Auxiliary heat running too often</li>
+					<li>Thermostat or control board problems</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Why Heat Pumps Need Local Expertise</h2>
+				<p>
+					Heat pumps reverse refrigerant flow to provide both heating and cooling. Issues
+					with reversing valves, defrost cycles, and dual-fuel setups require technicians
+					who work on these systems regularly. We service air-source and dual-fuel heat
+					pumps from all major brands.
+				</p>
+			</section>
+
+			<section>
+				<h2>Maintenance for Longer Life</h2>
+				<p>
+					Twice-yearly tune-ups keep heat pumps efficient and reduce the chance of mid-season
+					failures. We recommend spring and fall visits for Mooresville homes.
+				</p>
+			</section>
+
+			<section class="cta-box">
+				<h2>Need Heat Pump Service?</h2>
+				<p>Call for repair or schedule a tune-up.</p>
+				<div class="cta-buttons">
+					<a href={`tel:${BUSINESS_PHONE_TEL}`} class="btn btn-call">Call {BUSINESS_PHONE}</a>
+					<a href="/contact#quote" class="btn btn-quote">Get a Quote</a>
+				</div>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	main { max-width: 800px; margin: 0 auto; padding: 2em 1em; }
+	.breadcrumb { font-size: 0.9em; margin-bottom: 1.5em; color: #555; }
+	.breadcrumb a { color: #0d47a1; text-decoration: none; }
+	.breadcrumb a:hover { text-decoration: underline; }
+	h1 { color: #0d47a1; margin-bottom: 0.4em; }
+	.lead { font-size: 1.1em; margin-bottom: 1.75em; }
+	section { margin-bottom: 2em; }
+	h2 { color: #1565c0; font-size: 1.3em; margin: 0 0 0.5em; }
+	ul { padding-left: 1.4em; line-height: 1.7; }
+	.cta-box { text-align: center; background: #f5f9ff; padding: 2em 1em; border-radius: 8px; }
+	.cta-box h2 { color: #0d47a1; }
+	.cta-buttons { display: flex; flex-wrap: wrap; gap: 0.75em; justify-content: center; margin-top: 1em; }
+	.btn { display: inline-block; padding: 0.7em 1.4em; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 1.05em; }
+	.btn-call { background: #ff6f00; color: #fff; }
+	.btn-call:hover { background: #e65100; color: #fff; }
+	.btn-quote { background: #0d47a1; color: #fff; }
+	.btn-quote:hover { background: #1565c0; color: #fff; }
+</style>

@@ -1,0 +1,96 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import {
+	SITE_TITLE,
+	BUSINESS_PHONE,
+	BUSINESS_PHONE_TEL,
+} from '../../consts';
+
+const title = `Emergency HVAC Repair Mooresville NC | 24/7 Service`;
+const description =
+	"Emergency HVAC repair in Mooresville NC. After-hours and weekend service for no heat or no cooling. Call (704) 799-0123.";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<nav class="breadcrumb">
+				<a href="/">Home</a> → <a href="/services">Services</a> → Emergency Service
+			</nav>
+			<h1>Emergency HVAC Service in Mooresville, NC</h1>
+			<p class="lead">
+				HVAC problems don’t wait for business hours. When your AC fails in a heat wave or
+				your furnace dies on a cold night, we offer emergency repair for Mooresville and
+				Lake Norman residents.
+			</p>
+
+			<section>
+				<h2>When to Call for Emergency Service</h2>
+				<ul>
+					<li>No cooling during extreme heat</li>
+					<li>No heat during freezing temperatures</li>
+					<li>Burning smell or electrical issues from the system</li>
+					<li>Gas smell near a furnace (leave the house and call emergency services first)</li>
+					<li>Major water leak from the indoor unit</li>
+					<li>System making loud grinding or banging noises</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>What to Expect</h2>
+				<p>
+					Call <strong>{BUSINESS_PHONE}</strong> and describe the problem. We will let you
+					know the soonest available emergency slot. Our technicians arrive prepared with
+					common parts so many issues can be fixed in a single visit.
+				</p>
+			</section>
+
+			<section>
+				<h2>While You Wait</h2>
+				<ul>
+					<li>Check the thermostat settings and batteries</li>
+					<li>Verify the system has power at the breaker</li>
+					<li>Replace a dirty air filter if it is easy and safe to do so</li>
+					<li>Keep children and pets away from outdoor units and space heaters</li>
+				</ul>
+			</section>
+
+			<section class="cta-box">
+				<h2>Need Emergency Help Now?</h2>
+				<p>Call us for the fastest response in Mooresville.</p>
+				<div class="cta-buttons">
+					<a href={`tel:${BUSINESS_PHONE_TEL}`} class="btn btn-call">Call {BUSINESS_PHONE}</a>
+					<a href="/contact" class="btn btn-quote">Contact Us</a>
+				</div>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	main { max-width: 800px; margin: 0 auto; padding: 2em 1em; }
+	.breadcrumb { font-size: 0.9em; margin-bottom: 1.5em; color: #555; }
+	.breadcrumb a { color: #0d47a1; text-decoration: none; }
+	.breadcrumb a:hover { text-decoration: underline; }
+	h1 { color: #0d47a1; margin-bottom: 0.4em; }
+	.lead { font-size: 1.1em; margin-bottom: 1.75em; }
+	section { margin-bottom: 2em; }
+	h2 { color: #1565c0; font-size: 1.3em; margin: 0 0 0.5em; }
+	ul { padding-left: 1.4em; line-height: 1.7; }
+	.cta-box { text-align: center; background: #f5f9ff; padding: 2em 1em; border-radius: 8px; }
+	.cta-box h2 { color: #0d47a1; }
+	.cta-buttons { display: flex; flex-wrap: wrap; gap: 0.75em; justify-content: center; margin-top: 1em; }
+	.btn { display: inline-block; padding: 0.7em 1.4em; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 1.05em; }
+	.btn-call { background: #ff6f00; color: #fff; }
+	.btn-call:hover { background: #e65100; color: #fff; }
+	.btn-quote { background: #0d47a1; color: #fff; }
+	.btn-quote:hover { background: #1565c0; color: #fff; }
+</style>

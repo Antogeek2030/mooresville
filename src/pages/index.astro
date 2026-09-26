@@ -1,0 +1,369 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import {
+	SITE_TITLE,
+	SITE_DESCRIPTION,
+	USP,
+	BUSINESS_NAME,
+	BUSINESS_PHONE,
+	BUSINESS_PHONE_TEL,
+	BUSINESS_ADDRESS,
+	BUSINESS_STREET,
+	BUSINESS_CITY,
+	BUSINESS_STATE,
+	BUSINESS_ZIP,
+} from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`${SITE_TITLE} | Same-Day AC & Heating Repair`} description={SITE_DESCRIPTION} />
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "HVACBusiness",
+			"name": BUSINESS_NAME,
+			"image": "https://hvacrepairmooresvillenc.com/hero-hvac.jpg",
+			"@id": "https://hvacrepairmooresvillenc.com",
+			"url": "https://hvacrepairmooresvillenc.com",
+			"telephone": BUSINESS_PHONE_TEL,
+			"address": {
+				"@type": "PostalAddress",
+				"streetAddress": BUSINESS_STREET,
+				"addressLocality": BUSINESS_CITY,
+				"addressRegion": BUSINESS_STATE,
+				"postalCode": BUSINESS_ZIP,
+				"addressCountry": "US"
+			},
+			"geo": {
+				"@type": "GeoCoordinates",
+				"latitude": 35.5849,
+				"longitude": -80.8101
+			},
+			"openingHoursSpecification": [
+				{
+					"@type": "OpeningHoursSpecification",
+					"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+					"opens": "07:00",
+					"closes": "19:00"
+				},
+				{
+					"@type": "OpeningHoursSpecification",
+					"dayOfWeek": "Saturday",
+					"opens": "08:00",
+					"closes": "17:00"
+				}
+			],
+			"priceRange": "$$",
+			"areaServed": {
+				"@type": "City",
+				"name": "Mooresville"
+			}
+		})} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<!-- Hero -->
+			<section class="hero">
+				<img
+					src="/hero-hvac.jpg"
+					alt="Professional HVAC technician repairing air conditioning unit in Mooresville NC"
+					width="1200"
+					height="500"
+					fetchpriority="high"
+					class="hero-img"
+				/>
+				<div class="hero-text">
+					<h1>HVAC Repair Mooresville NC</h1>
+					<p class="usp">{USP}</p>
+					<div class="cta-buttons">
+						<a href={`tel:${BUSINESS_PHONE_TEL}`} class="btn btn-call">Call Us</a>
+						<a href="/contact#quote" class="btn btn-quote">Get a Quote</a>
+					</div>
+				</div>
+			</section>
+
+			<!-- Intro -->
+			<section class="intro">
+				<h2>Trusted Local HVAC Experts Serving Mooresville & Lake Norman</h2>
+				<p>
+					When your AC stops cooling or your furnace fails, you need fast, honest help.
+					We provide same-day HVAC repair, installation, and maintenance for homes and
+					businesses in Mooresville, NC and surrounding communities. Licensed, insured,
+					and focused on fixing the problem right the first time.
+				</p>
+			</section>
+
+			<!-- Core Services Preview -->
+			<section class="services-preview">
+				<h2>Our Core Services</h2>
+				<div class="service-grid">
+					<article>
+						<h3><a href="/services/ac-repair">AC Repair</a></h3>
+						<p>Fast diagnosis and repair for all makes and models of air conditioners.</p>
+					</article>
+					<article>
+						<h3><a href="/services/heating-repair">Heating Repair</a></h3>
+						<p>Furnace, heat pump, and boiler repair to keep your home warm.</p>
+					</article>
+					<article>
+						<h3><a href="/services/hvac-installation">HVAC Installation</a></h3>
+						<p>New system installation with proper sizing and energy-efficient options.</p>
+					</article>
+					<article>
+						<h3><a href="/services/maintenance">Maintenance & Tune-Ups</a></h3>
+						<p>Seasonal check-ups that extend equipment life and prevent breakdowns.</p>
+					</article>
+					<article>
+						<h3><a href="/services/emergency-service">Emergency Service</a></h3>
+						<p>24/7 emergency HVAC repair when you need help after hours.</p>
+					</article>
+				</div>
+				<p class="center"><a href="/services" class="btn btn-outline">View All Services</a></p>
+			</section>
+
+			<!-- Testimonials -->
+			<section class="testimonials">
+				<h2>What Our Customers Say</h2>
+				<div class="testimonial-grid">
+					<blockquote>
+						<p>“Called in the morning with no AC. Technician arrived same day, fixed the issue in under an hour, and explained everything clearly. Fair price too.”</p>
+						<footer>— Sarah M., Mooresville</footer>
+					</blockquote>
+					<blockquote>
+						<p>“We’ve used them for two winters now for furnace service. Always on time, clean work, and they never try to upsell unnecessary parts.”</p>
+						<footer>— James T., Lake Norman</footer>
+					</blockquote>
+					<blockquote>
+						<p>“Emergency heat pump failure on a Sunday. They answered, came out, and got us warm again. Highly recommend for Mooresville residents.”</p>
+						<footer>— Lisa R., Davidson</footer>
+					</blockquote>
+				</div>
+			</section>
+
+			<!-- Map -->
+			<section class="map-section">
+				<h2>Find Us</h2>
+				<p>{BUSINESS_ADDRESS}</p>
+				<div class="map-wrap">
+					<iframe
+						title="Map of HVAC Repair Mooresville NC at 149 Rolling Hill Rd"
+						src="https://maps.google.com/maps?q=149+Rolling+Hill+Rd,+Mooresville,+NC+28117&output=embed"
+						width="100%"
+						height="350"
+						style="border:0;"
+						allowfullscreen=""
+						loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade"
+					></iframe>
+				</div>
+			</section>
+
+			<!-- Final CTA -->
+			<section class="final-cta">
+				<h2>Need HVAC Help Today?</h2>
+				<p>Call now for same-day service or request a free quote online.</p>
+				<div class="cta-buttons">
+					<a href={`tel:${BUSINESS_PHONE_TEL}`} class="btn btn-call">Call {BUSINESS_PHONE}</a>
+					<a href="/contact#quote" class="btn btn-quote">Get a Quote</a>
+				</div>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	main {
+		width: 100%;
+		max-width: 1100px;
+		margin: 0 auto;
+		padding: 0 1em 2em;
+	}
+	.hero {
+		position: relative;
+		margin: 0 -1em 2em;
+		text-align: center;
+	}
+	.hero-img {
+		width: 100%;
+		height: auto;
+		max-height: 420px;
+		object-fit: cover;
+		display: block;
+	}
+	.hero-text {
+		padding: 1.5em 1em;
+		background: #f5f9ff;
+	}
+	.hero-text h1 {
+		margin: 0 0 0.4em;
+		font-size: 2em;
+		color: #0d47a1;
+	}
+	.usp {
+		font-size: 1.15em;
+		font-weight: 600;
+		color: #1565c0;
+		margin: 0 0 1.25em;
+		max-width: 700px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.cta-buttons {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75em;
+		justify-content: center;
+	}
+	.btn {
+		display: inline-block;
+		padding: 0.7em 1.4em;
+		border-radius: 6px;
+		font-weight: 700;
+		text-decoration: none;
+		font-size: 1.05em;
+		transition: background 0.15s;
+	}
+	.btn-call {
+		background: #ff6f00;
+		color: #fff;
+	}
+	.btn-call:hover {
+		background: #e65100;
+		color: #fff;
+	}
+	.btn-quote {
+		background: #0d47a1;
+		color: #fff;
+	}
+	.btn-quote:hover {
+		background: #1565c0;
+		color: #fff;
+	}
+	.btn-outline {
+		background: transparent;
+		border: 2px solid #0d47a1;
+		color: #0d47a1;
+	}
+	.btn-outline:hover {
+		background: #0d47a1;
+		color: #fff;
+	}
+	.intro {
+		text-align: center;
+		margin-bottom: 2.5em;
+	}
+	.intro h2 {
+		color: #0d47a1;
+		font-size: 1.6em;
+	}
+	.services-preview {
+		margin-bottom: 2.5em;
+	}
+	.services-preview h2 {
+		text-align: center;
+		color: #0d47a1;
+	}
+	.service-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 1.25em;
+		margin: 1.5em 0;
+	}
+	.service-grid article {
+		background: #fff;
+		border: 1px solid #e3f2fd;
+		border-radius: 8px;
+		padding: 1.25em;
+		box-shadow: 0 2px 6px rgba(13, 71, 161, 0.08);
+	}
+	.service-grid h3 {
+		margin: 0 0 0.4em;
+		font-size: 1.15em;
+		color: #0d47a1;
+	}
+	.service-grid h3 a {
+		color: #0d47a1;
+		text-decoration: none;
+	}
+	.service-grid h3 a:hover {
+		text-decoration: underline;
+	}
+	.service-grid p {
+		margin: 0;
+		font-size: 0.95em;
+		line-height: 1.5;
+	}
+	.center {
+		text-align: center;
+	}
+	.testimonials {
+		margin-bottom: 2.5em;
+		background: #f5f9ff;
+		padding: 1.5em;
+		border-radius: 8px;
+	}
+	.testimonials h2 {
+		text-align: center;
+		color: #0d47a1;
+	}
+	.testimonial-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 1.25em;
+		margin-top: 1.25em;
+	}
+	.testimonial-grid blockquote {
+		margin: 0;
+		padding: 1em;
+		background: #fff;
+		border-left: 4px solid #ff6f00;
+		border-radius: 0 6px 6px 0;
+		font-size: 0.95em;
+	}
+	.testimonial-grid p {
+		margin: 0 0 0.75em;
+		font-style: italic;
+	}
+	.testimonial-grid footer {
+		font-weight: 600;
+		color: #1565c0;
+		font-style: normal;
+	}
+	.map-section {
+		margin-bottom: 2.5em;
+		text-align: center;
+	}
+	.map-section h2 {
+		color: #0d47a1;
+	}
+	.map-wrap {
+		margin-top: 1em;
+		border-radius: 8px;
+		overflow: hidden;
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	}
+	.map-wrap iframe {
+		display: block;
+		max-width: 100%;
+	}
+	.final-cta {
+		text-align: center;
+		padding: 2em 1em;
+		background: #0d47a1;
+		color: #fff;
+		border-radius: 8px;
+	}
+	.final-cta h2 {
+		color: #fff;
+		margin: 0 0 0.4em;
+	}
+	.final-cta p {
+		margin: 0 0 1.25em;
+		opacity: 0.95;
+	}
+</style>

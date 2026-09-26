@@ -1,0 +1,96 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import {
+	SITE_TITLE,
+	BUSINESS_PHONE,
+	BUSINESS_PHONE_TEL,
+} from '../../consts';
+
+const title = `HVAC Installation Mooresville NC | New AC & Heating Systems`;
+const description =
+	"Professional HVAC installation in Mooresville NC. Proper sizing, energy-efficient systems, and clean installation. Call (704) 799-0123 for a free quote.";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<nav class="breadcrumb">
+				<a href="/">Home</a> → <a href="/services">Services</a> → HVAC Installation
+			</nav>
+			<h1>HVAC Installation in Mooresville, NC</h1>
+			<p class="lead">
+				Replacing an aging system is a big decision. We help Mooresville homeowners choose
+				the right equipment, size it correctly, and install it for long-term comfort and
+				efficiency.
+			</p>
+
+			<section>
+				<h2>What We Install</h2>
+				<ul>
+					<li>Central air conditioning systems</li>
+					<li>Gas and electric furnaces</li>
+					<li>Heat pumps (air-source and dual-fuel)</li>
+					<li>High-efficiency and ENERGY STAR systems</li>
+					<li>Smart thermostats and zoning options</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Our Installation Process</h2>
+				<ol>
+					<li><strong>Home assessment</strong> — Load calculation and inspection of existing ductwork.</li>
+					<li><strong>Equipment recommendation</strong> — Options that fit your budget and efficiency goals.</li>
+					<li><strong>Clear quote</strong> — Upfront pricing with no surprises.</li>
+					<li><strong>Professional installation</strong> — Clean work, proper refrigerant charge, and system testing.</li>
+					<li><strong>Walkthrough</strong> — We show you how to operate and maintain your new system.</li>
+				</ol>
+			</section>
+
+			<section>
+				<h2>Why Proper Sizing Matters</h2>
+				<p>
+					An oversized or undersized system costs more to run and fails sooner. We perform
+					Manual J-style load calculations so your new HVAC system matches your Mooresville
+					home’s actual needs.
+				</p>
+			</section>
+
+			<section class="cta-box">
+				<h2>Planning a New System?</h2>
+				<p>Request a free installation quote today.</p>
+				<div class="cta-buttons">
+					<a href={`tel:${BUSINESS_PHONE_TEL}`} class="btn btn-call">Call {BUSINESS_PHONE}</a>
+					<a href="/contact#quote" class="btn btn-quote">Get a Quote</a>
+				</div>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	main { max-width: 800px; margin: 0 auto; padding: 2em 1em; }
+	.breadcrumb { font-size: 0.9em; margin-bottom: 1.5em; color: #555; }
+	.breadcrumb a { color: #0d47a1; text-decoration: none; }
+	.breadcrumb a:hover { text-decoration: underline; }
+	h1 { color: #0d47a1; margin-bottom: 0.4em; }
+	.lead { font-size: 1.1em; margin-bottom: 1.75em; }
+	section { margin-bottom: 2em; }
+	h2 { color: #1565c0; font-size: 1.3em; margin: 0 0 0.5em; }
+	ul, ol { padding-left: 1.4em; line-height: 1.7; }
+	.cta-box { text-align: center; background: #f5f9ff; padding: 2em 1em; border-radius: 8px; }
+	.cta-box h2 { color: #0d47a1; }
+	.cta-buttons { display: flex; flex-wrap: wrap; gap: 0.75em; justify-content: center; margin-top: 1em; }
+	.btn { display: inline-block; padding: 0.7em 1.4em; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 1.05em; }
+	.btn-call { background: #ff6f00; color: #fff; }
+	.btn-call:hover { background: #e65100; color: #fff; }
+	.btn-quote { background: #0d47a1; color: #fff; }
+	.btn-quote:hover { background: #1565c0; color: #fff; }
+</style>

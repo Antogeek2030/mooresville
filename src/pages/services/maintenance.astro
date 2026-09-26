@@ -1,0 +1,96 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import {
+	SITE_TITLE,
+	BUSINESS_PHONE,
+	BUSINESS_PHONE_TEL,
+} from '../../consts';
+
+const title = `HVAC Maintenance & Tune-Ups Mooresville NC`;
+const description =
+	"Seasonal HVAC maintenance and tune-ups in Mooresville NC. Keep your system efficient, reliable, and under warranty. Call (704) 799-0123.";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<nav class="breadcrumb">
+				<a href="/">Home</a> → <a href="/services">Services</a> → Maintenance
+			</nav>
+			<h1>HVAC Maintenance & Tune-Ups in Mooresville, NC</h1>
+			<p class="lead">
+				Regular maintenance is the best way to avoid mid-summer breakdowns and high energy
+				bills. Our tune-ups keep your system running smoothly in the Lake Norman climate.
+			</p>
+
+			<section>
+				<h2>Recommended Schedule</h2>
+				<ul>
+					<li><strong>Spring</strong> — Full AC tune-up before cooling season</li>
+					<li><strong>Fall</strong> — Furnace or heat pump inspection before winter</li>
+					<li><strong>Filters</strong> — Check monthly; replace every 1–3 months</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>What’s Included in a Tune-Up</h2>
+				<ul>
+					<li>Clean indoor and outdoor coils</li>
+					<li>Check refrigerant levels and look for leaks</li>
+					<li>Inspect and tighten electrical connections</li>
+					<li>Test safety controls and thermostat</li>
+					<li>Lubricate moving parts as needed</li>
+					<li>Check airflow and duct connections</li>
+					<li>Inspect drain lines and condensate pan</li>
+					<li>Performance and efficiency check</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Benefits for Mooresville Homeowners</h2>
+				<p>
+					Humid summers and occasional cold snaps mean HVAC systems work hard year-round.
+					Preventive maintenance reduces emergency calls, improves indoor air quality, and
+					helps equipment last longer — often protecting manufacturer warranties.
+				</p>
+			</section>
+
+			<section class="cta-box">
+				<h2>Schedule Your Tune-Up</h2>
+				<p>Book spring or fall maintenance before the rush.</p>
+				<div class="cta-buttons">
+					<a href={`tel:${BUSINESS_PHONE_TEL}`} class="btn btn-call">Call {BUSINESS_PHONE}</a>
+					<a href="/contact#quote" class="btn btn-quote">Get a Quote</a>
+				</div>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	main { max-width: 800px; margin: 0 auto; padding: 2em 1em; }
+	.breadcrumb { font-size: 0.9em; margin-bottom: 1.5em; color: #555; }
+	.breadcrumb a { color: #0d47a1; text-decoration: none; }
+	.breadcrumb a:hover { text-decoration: underline; }
+	h1 { color: #0d47a1; margin-bottom: 0.4em; }
+	.lead { font-size: 1.1em; margin-bottom: 1.75em; }
+	section { margin-bottom: 2em; }
+	h2 { color: #1565c0; font-size: 1.3em; margin: 0 0 0.5em; }
+	ul { padding-left: 1.4em; line-height: 1.7; }
+	.cta-box { text-align: center; background: #f5f9ff; padding: 2em 1em; border-radius: 8px; }
+	.cta-box h2 { color: #0d47a1; }
+	.cta-buttons { display: flex; flex-wrap: wrap; gap: 0.75em; justify-content: center; margin-top: 1em; }
+	.btn { display: inline-block; padding: 0.7em 1.4em; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 1.05em; }
+	.btn-call { background: #ff6f00; color: #fff; }
+	.btn-call:hover { background: #e65100; color: #fff; }
+	.btn-quote { background: #0d47a1; color: #fff; }
+	.btn-quote:hover { background: #1565c0; color: #fff; }
+</style>

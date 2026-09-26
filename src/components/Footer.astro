@@ -1,0 +1,86 @@
+---
+import {
+	BUSINESS_NAME,
+	BUSINESS_PHONE,
+	BUSINESS_PHONE_TEL,
+	BUSINESS_ADDRESS,
+	BUSINESS_EMAIL,
+} from '../consts';
+
+const today = new Date();
+---
+
+<footer>
+	<div class="footer-inner">
+		<div class="footer-col">
+			<strong>{BUSINESS_NAME}</strong>
+			<p>{BUSINESS_ADDRESS}</p>
+			<p>
+				<a href={`tel:${BUSINESS_PHONE_TEL}`}>{BUSINESS_PHONE}</a><br />
+				<a href={`mailto:${BUSINESS_EMAIL}`}>{BUSINESS_EMAIL}</a>
+			</p>
+		</div>
+		<div class="footer-col">
+			<strong>Quick Links</strong>
+			<ul>
+				<li><a href="/services">Core Services</a></li>
+				<li><a href="/service-areas">Service Areas</a></li>
+				<li><a href="/blog">Blog</a></li>
+				<li><a href="/contact">Contact Us</a></li>
+			</ul>
+		</div>
+		<div class="footer-col">
+			<strong>Hours</strong>
+			<p>Mon–Fri: 7:00 AM – 7:00 PM<br />Sat: 8:00 AM – 5:00 PM<br />Sun: Emergency Only</p>
+		</div>
+	</div>
+	<p class="copyright">&copy; {today.getFullYear()} {BUSINESS_NAME}. All rights reserved.</p>
+</footer>
+
+<style>
+	footer {
+		background: #0d47a1;
+		color: #e3f2fd;
+		padding: 2.5em 1em 1.5em;
+		margin-top: 3em;
+	}
+	.footer-inner {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 2em;
+		max-width: 1100px;
+		margin: 0 auto 1.5em;
+	}
+	.footer-col strong {
+		display: block;
+		margin-bottom: 0.5em;
+		color: #fff;
+		font-size: 1.05em;
+	}
+	.footer-col p,
+	.footer-col ul {
+		margin: 0;
+		font-size: 0.9em;
+		line-height: 1.6;
+	}
+	.footer-col ul {
+		list-style: none;
+		padding: 0;
+	}
+	.footer-col a {
+		color: #bbdefb;
+		text-decoration: none;
+	}
+	.footer-col a:hover {
+		color: #fff;
+		text-decoration: underline;
+	}
+	.copyright {
+		text-align: center;
+		font-size: 0.85em;
+		color: #90caf9;
+		margin: 0;
+		border-top: 1px solid rgba(255, 255, 255, 0.15);
+		padding-top: 1em;
+	}
+</style>

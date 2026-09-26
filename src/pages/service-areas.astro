@@ -1,0 +1,153 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import {
+	SITE_TITLE,
+	BUSINESS_PHONE,
+	BUSINESS_PHONE_TEL,
+	BUSINESS_ADDRESS,
+} from '../consts';
+
+const title = `Service Areas | HVAC Repair Mooresville NC & Lake Norman`;
+const description =
+	"We provide HVAC repair and installation in Mooresville, Lake Norman, Davidson, Cornelius, Huntersville, and nearby communities. Call (704) 799-0123.";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Service Areas</h1>
+			<p class="lead">
+				Based in Mooresville at {BUSINESS_ADDRESS}, we proudly serve homeowners and
+				businesses throughout southern Iredell County and the greater Lake Norman region.
+			</p>
+
+			<section>
+				<h2>Primary Service Area – Mooresville, NC</h2>
+				<p>
+					Our home base. We offer the fastest response times for AC repair, heating service,
+					and emergency calls throughout Mooresville, including neighborhoods near Lake Norman,
+					Brawley School Road, Highway 150, and the downtown area.
+				</p>
+			</section>
+
+			<section>
+				<h2>Communities We Serve</h2>
+				<ul class="areas">
+					<li>Mooresville</li>
+					<li>Lake Norman</li>
+					<li>Davidson</li>
+					<li>Cornelius</li>
+					<li>Huntersville</li>
+					<li>Troutman</li>
+					<li>Statesville (select areas)</li>
+					<li>Denver, NC</li>
+					<li>Sherrills Ford</li>
+					<li>Mount Mourne</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Why Local Matters</h2>
+				<p>
+					As a Mooresville-based team we know the climate challenges of the Lake Norman area —
+					humid summers that stress air conditioners and occasional cold snaps that push heating
+					systems hard. We stock common parts and can often complete repairs the same day.
+				</p>
+			</section>
+
+			<section class="cta-box">
+				<h2>Not Sure If We Cover Your Address?</h2>
+				<p>Give us a call — we’ll let you know right away.</p>
+				<div class="cta-buttons">
+					<a href={`tel:${BUSINESS_PHONE_TEL}`} class="btn btn-call">Call {BUSINESS_PHONE}</a>
+					<a href="/contact" class="btn btn-quote">Contact Us</a>
+				</div>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	main {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 2em 1em;
+	}
+	h1 {
+		color: #0d47a1;
+		margin-bottom: 0.5em;
+	}
+	.lead {
+		font-size: 1.1em;
+		margin-bottom: 2em;
+	}
+	section {
+		margin-bottom: 2em;
+	}
+	h2 {
+		color: #1565c0;
+		font-size: 1.35em;
+		margin: 0 0 0.5em;
+	}
+	.areas {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+		gap: 0.5em 1.5em;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	.areas li {
+		padding: 0.4em 0;
+		border-bottom: 1px solid #e3f2fd;
+		font-weight: 500;
+	}
+	.cta-box {
+		text-align: center;
+		background: #f5f9ff;
+		padding: 2em 1em;
+		border-radius: 8px;
+	}
+	.cta-box h2 {
+		color: #0d47a1;
+	}
+	.cta-buttons {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75em;
+		justify-content: center;
+		margin-top: 1em;
+	}
+	.btn {
+		display: inline-block;
+		padding: 0.7em 1.4em;
+		border-radius: 6px;
+		font-weight: 700;
+		text-decoration: none;
+		font-size: 1.05em;
+	}
+	.btn-call {
+		background: #ff6f00;
+		color: #fff;
+	}
+	.btn-call:hover {
+		background: #e65100;
+		color: #fff;
+	}
+	.btn-quote {
+		background: #0d47a1;
+		color: #fff;
+	}
+	.btn-quote:hover {
+		background: #1565c0;
+		color: #fff;
+	}
+</style>

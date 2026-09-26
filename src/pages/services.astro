@@ -1,0 +1,180 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import {
+	SITE_TITLE,
+	BUSINESS_PHONE,
+	BUSINESS_PHONE_TEL,
+} from '../consts';
+
+const title = `HVAC Services in Mooresville NC | ${SITE_TITLE}`;
+const description =
+	"Core HVAC services in Mooresville NC: AC repair, heating repair, installation, maintenance, emergency service, and heat pump repair. Call (704) 799-0123.";
+
+const services = [
+	{
+		slug: "ac-repair",
+		title: "AC Repair",
+		summary: "Same-day air conditioning repair for all major brands. Fix weak airflow, strange noises, and cooling failures fast.",
+	},
+	{
+		slug: "heating-repair",
+		title: "Heating & Furnace Repair",
+		summary: "Furnace, boiler, and heating system repair to keep your Mooresville home warm all winter.",
+	},
+	{
+		slug: "hvac-installation",
+		title: "HVAC Installation",
+		summary: "New AC and heating system installation with proper sizing and energy-efficient options.",
+	},
+	{
+		slug: "maintenance",
+		title: "Maintenance & Tune-Ups",
+		summary: "Seasonal HVAC tune-ups that extend equipment life, improve efficiency, and prevent breakdowns.",
+	},
+	{
+		slug: "emergency-service",
+		title: "Emergency HVAC Service",
+		summary: "24/7 emergency heating and cooling repair when you need help after hours or on weekends.",
+	},
+	{
+		slug: "heat-pump-repair",
+		title: "Heat Pump Repair",
+		summary: "Expert heat pump service and repair for year-round comfort in the Lake Norman climate.",
+	},
+];
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Core HVAC Services</h1>
+			<p class="lead">
+				We offer complete heating and cooling solutions for homes and businesses in
+				Mooresville and the Lake Norman area. Every job is performed by trained local
+				technicians with transparent pricing. Click any service below for full details.
+			</p>
+
+			<div class="service-grid">
+				{services.map((s) => (
+					<article>
+						<h2><a href={`/services/${s.slug}`}>{s.title}</a></h2>
+						<p>{s.summary}</p>
+						<a href={`/services/${s.slug}`} class="learn-more">Learn more →</a>
+					</article>
+				))}
+			</div>
+
+			<section class="cta-box">
+				<h2>Ready to Schedule Service?</h2>
+				<p>Call us now or request a free quote online.</p>
+				<div class="cta-buttons">
+					<a href={`tel:${BUSINESS_PHONE_TEL}`} class="btn btn-call">Call {BUSINESS_PHONE}</a>
+					<a href="/contact#quote" class="btn btn-quote">Get a Quote</a>
+				</div>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	main {
+		max-width: 900px;
+		margin: 0 auto;
+		padding: 2em 1em;
+	}
+	h1 {
+		color: #0d47a1;
+		margin-bottom: 0.5em;
+	}
+	.lead {
+		font-size: 1.1em;
+		margin-bottom: 2em;
+	}
+	.service-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+		gap: 1.25em;
+		margin-bottom: 2.5em;
+	}
+	.service-grid article {
+		background: #fff;
+		border: 1px solid #e3f2fd;
+		border-radius: 8px;
+		padding: 1.25em;
+		box-shadow: 0 2px 6px rgba(13, 71, 161, 0.08);
+	}
+	.service-grid h2 {
+		margin: 0 0 0.5em;
+		font-size: 1.2em;
+	}
+	.service-grid h2 a {
+		color: #0d47a1;
+		text-decoration: none;
+	}
+	.service-grid h2 a:hover {
+		text-decoration: underline;
+	}
+	.service-grid p {
+		margin: 0 0 0.75em;
+		font-size: 0.95em;
+		line-height: 1.5;
+	}
+	.learn-more {
+		font-weight: 600;
+		font-size: 0.95em;
+		color: #ff6f00;
+		text-decoration: none;
+	}
+	.learn-more:hover {
+		text-decoration: underline;
+	}
+	.cta-box {
+		text-align: center;
+		background: #f5f9ff;
+		padding: 2em 1em;
+		border-radius: 8px;
+	}
+	.cta-box h2 {
+		color: #0d47a1;
+		margin: 0 0 0.4em;
+	}
+	.cta-buttons {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75em;
+		justify-content: center;
+		margin-top: 1em;
+	}
+	.btn {
+		display: inline-block;
+		padding: 0.7em 1.4em;
+		border-radius: 6px;
+		font-weight: 700;
+		text-decoration: none;
+		font-size: 1.05em;
+	}
+	.btn-call {
+		background: #ff6f00;
+		color: #fff;
+	}
+	.btn-call:hover {
+		background: #e65100;
+		color: #fff;
+	}
+	.btn-quote {
+		background: #0d47a1;
+		color: #fff;
+	}
+	.btn-quote:hover {
+		background: #1565c0;
+		color: #fff;
+	}
+</style>
